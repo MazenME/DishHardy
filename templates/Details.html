@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details-b.css' %}">
+{% endblock %}
+
+{% block title %}
+    {{ recipe.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="section-a">
+        <div class="container">
+            <div class="image">
+                <img id ="recipeImg" src="{{ recipe.image }}" alt="{{ recipe.name }}">
+            </div>
+
+            <div class="title-container">
+                <div class="content">
+                    <h2 class="title" id="recipeName">{{ recipe.name }}</h2>
+                    <br><hr><br>
+                    <h4 id="recipeCourse">{{ recipe.course }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <div class="section-b">
+        <div class="container">
+            <div class="ingredients">
+                <h2>Ingredients</h2>
+                <br><br>
+                <table class="table-fill">
+                    <thead>
+                    <tr>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-hover" id="recipeIngredients">
+                    {% for ingredient in recipe.ingredients.all %}
+                        <tr>
+                            <td>{{ ingredient.name }}</td>
+                            <td>{{ ingredient.quantity }}  {{ingredient.unit}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <br><br><br><br>
+
+            <div class="tab">
+                <ul>
+                    <li><a href="#1">Instructions</a></li>
+                </ul>
+            </div>
+
+            <div class="box" id="1">
+                <p>{{ recipe.instructions }}</p>
+                <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

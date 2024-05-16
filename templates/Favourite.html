@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/fav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+{% endblock %}
+
+{% block title %}
+    Favourite Recipes
+{% endblock %}
+
+{% block content %}
+    <section class="recipes">
+        <h1>Favourite Recipes</h1>
+        <div id="FAVO" class="recipe-section">
+            {% if favoured_recipes %}
+                {% for recipe in favoured_recipes %}
+                    <div class="recipe-card " style = "padding-bottom:30px ; height:315px">
+                        <a href="{% url 'recipe_details' recipe.id %}">
+                            <img src="{{ recipe.image }}" alt="{{ recipe.name }}">
+                            <h2>{{ recipe.name }}</h2>
+                        </a>
+                        <form method="POST" action="{% url 'remove_favourite' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="recipe_id" value="{{ recipe.id }}">
+                            <button type="submit" style = "width:50% " class="btn " >Remove</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No favourite recipes found.</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

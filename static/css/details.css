@@ -1,0 +1,461 @@
+
+:root {
+    --bg-primary : #F7F7F7;
+    --bg-secondary : #734060;
+    --bg-tertiary : #F1D095;
+    --bg-quaternary : #979797;
+    --bg-quinary : #E6E6E6;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    
+    
+    .container {
+        width: 100%;
+        max-width: 1140px; 
+        margin: 0 auto; 
+        padding: 0 15px;
+    }
+
+
+    header {
+        padding: 20px;
+        background-color: transparent;
+      }
+      
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      header .logo {
+        font-size: 30px;
+        color: var(--bg-secondary) !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      header .links {
+        position: relative;
+        z-index: 14;
+      }
+      
+      header .links .icon:hover span:nth-child(2) {
+        width: 95%;
+      }
+      
+      header .links .icon {
+        width: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      
+      header .links .icon span {
+        background-color: var(--bg-quaternary);
+        margin-bottom: 5px;
+        height: 2px;
+      }
+      
+      header .links .icon span:first-child {
+        width: 100%;
+      }
+      
+      header .links .icon span:nth-child(2) {
+        width: 60%;
+        transition: 0.3s;
+      }
+      
+      header .links .icon span:last-child {
+        width: 100%;
+      }
+      
+      header .links:hover ul {
+        display: block;
+      }
+      
+      header .links ul {
+        background-color: #f6f6f6;
+        padding-left: 0px;
+        min-width: 200px;
+        border-radius: 5px;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 15px);
+        display: none;
+        z-index: 1;
+      }
+      
+      header .links ul::before {
+        content: "";
+        position: absolute;
+        border-width: 15px;
+        border-style: solid;
+        border-color: transparent transparent #f6f6f6 transparent;
+        right: 1px;
+        top: -28px;
+      }
+      
+      header .links ul li a {
+        display: block;
+        padding: 15px;
+        color: #333;
+        transition: 0.3s;
+      }
+      
+      header .links ul li:not(:last-child) a {
+        border-bottom: 1px solid #ddd;
+      }
+      
+      header .links ul li a:hover {
+        padding-left: 20px;
+      }
+
+
+
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+
+      
+
+
+
+body .section-a , body .section-b{
+  font-family: 'Poppins' , sans-serif;
+  width: 100%;
+  display: grid;
+  place-items: top;
+}
+
+.section-a .container{
+  margin-top: 15px;
+  width: 90%;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 50px 30px;
+  background-color: #734060;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.section-a .container .image{
+  overflow: hidden;
+  border-radius: 50px;
+  width: 500px;
+}
+.section-a .container .image img{
+  width: 100%;
+  object-fit:contain;
+}
+.title-container .title{
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+#recipeCourse{
+  color : #ffffff6a;
+  font-family:'Courier New', Courier, monospace;
+}
+.section-a .container .title-container{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.section-a .container .title-container .content{
+  padding-left: 35%;
+}
+.section-a .container .title-container .content .p{
+  font-size: 16px;
+  line-height: 26px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+
+
+/* Style for the section container */
+.section-b {
+  background-color: #fff;
+  padding: 20px;
+}
+
+
+.ingredients h2{
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+div.table-title {
+display: block;
+ margin: auto;
+ max-width: 600px;
+ padding:5px;
+ width: 100%;
+}
+
+.table-title h3 {
+  color: #fafafa;
+  font-size: 30px;
+  font-weight: 400;
+  font-style:normal;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  text-transform:uppercase;
+}
+
+
+/*** Table Styles **/
+
+.table-fill {
+ background: white;
+ border-radius:10px;
+ border-collapse: collapse;
+ height: 320px;
+ margin: auto;
+ max-width: 600px;
+ padding:5px;
+ width: 100%;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+ animation: float 5s infinite;
+}
+
+th {
+ color:#fff;
+ background:#734060;
+ border-bottom:4px solid #9ea7af;
+ border-right: 1px solid #343a45;
+ font-size:23px;
+ font-weight: 100;
+ padding:24px;
+ text-align:left;
+ text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+ vertical-align:middle;
+}
+
+th:first-child {
+ border-top-left-radius:3px;
+}
+
+th:last-child {
+ border-top-right-radius:3px;
+ border-right:none;
+}
+ 
+tr {
+ border-top: 1px solid #C1C3D1;
+ border-bottom-: 1px solid #C1C3D1;
+ color:#666B85;
+ font-size:16px;
+ font-weight:normal;
+ text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:hover td {
+ background:#4E5066;
+ color:#FFFFFF;
+ border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+ border-top:none;
+}
+
+tr:last-child {
+ border-bottom:none;
+}
+
+tr:nth-child(odd) td {
+ background:#EBEBEB;
+}
+
+tr:nth-child(odd):hover td {
+ background:#4E5066;
+}
+
+tr:last-child td:first-child {
+ border-bottom-left-radius:3px;
+}
+
+tr:last-child td:last-child {
+ border-bottom-right-radius:3px;
+}
+
+td {
+ background:#FFFFFF;
+ padding:20px;
+ text-align:left;
+ vertical-align:middle;
+ font-weight:300;
+ font-size:18px;
+ text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+ border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+ border-right: 0px;
+}
+
+th.text-left {
+ text-align: left;
+}
+
+th.text-center {
+ text-align: center;
+}
+
+th.text-right {
+ text-align: right;
+}
+
+td.text-left {
+ text-align: left;
+}
+
+td.text-center {
+ text-align: center;
+}
+
+td.text-right {
+ text-align: right;
+}
+/* First column */
+th:first-child,
+td:first-child {
+    width: 48%; /* Adjust the width as needed */
+}
+
+/* Second column */
+th:last-child,
+td:last-child {
+    width: 50%; /* Adjust the width as needed */
+}
+
+
+
+
+/* Style for the container */
+
+.section-b .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style for the tabs */
+.tab {
+  margin-bottom: 15px;
+}
+
+.tab ul {
+  list-style: none;
+  display: flex;
+}
+
+.tab ul li {
+  margin-right: 10px;
+}
+
+.tab ul li a {
+  
+  color: #000;
+  font-weight: bolder;
+  padding: 5px 5px;
+
+}
+.tab ul li a:hover{
+  text-decoration: underline;
+}
+
+/* Style for the box */
+.box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Style for the box content */
+.box p {
+  font-size: 16px;
+  color: #734060;
+  line-height: 1.5;
+}
+
+/* Style for line breaks */
+br {
+  margin-bottom: 20px;
+}
+
+#recipeName{
+  color: var(--bg-primary);
+
+}
+
+
+
+
+
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+  @media (max-width: 575.99px) {
+    .container {
+    max-width: 100%; 
+    padding: 0 10px; 
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+    max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+    max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+    max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+    max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+    max-width: 1320px;
+    }
+}
+ 
+  

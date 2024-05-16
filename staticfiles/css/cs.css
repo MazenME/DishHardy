@@ -1,0 +1,136 @@
+.kitchens {
+    width: 1140px;
+    margin: auto;
+}
+
+.kitchens p ,.kitchens a p{
+    clear: both;
+    margin-bottom:50px ;
+}
+
+.kitchens h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--bg-secondary);
+    text-align: center;
+}
+
+.kitchens a {
+    float: left;
+    margin-left: 1%;
+}
+
+.kitchens a img {
+    height: 394px;
+    width: 214px;
+    position: relative;
+    z-index: 1;
+}
+
+.kitchens a div div{
+    padding-top: 5px;
+    width: 70%;
+    height: 30px;
+    text-align: center;
+    color: white;
+    margin:-15px auto;
+    background-color: #edb654;
+    font-weight: bold;
+    position: relative;
+    z-index: 1000;
+}
+
+
+.buttons a, .buttons p{
+    float: left;
+    position: relative;
+}
+
+.buttons a{
+    width: 200px;
+    height: 35px;
+    background-color: var(--bg-secondary);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    margin: 10px;
+}
+
+.buttons p{
+    font-style: oblique;
+    height: 35px;
+    padding-top: 25px;
+}
+
+.buttons div{
+    clear: both;
+}
+.buttons{
+    width: fit-content;
+    margin: auto;
+}
+
+a:hover{
+    opacity: 0.5;
+}
+
+.links{
+    position: relative;
+    z-index: 100;
+}
+
+
+
+.Most_Popular_Recipes{
+    margin: 55px auto;
+    width: 1140px;
+}
+.Most_Popular_Recipes div span{
+    clear: both;
+}
+
+.Most_Popular_Recipes div{
+    height: 400px;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+div.Koshari img,div.PiZZA img,div.croissant img,div.Kabsa img,div.burger img {
+    float: left;
+    width: 300px;
+    height: 400px;
+    margin-right:20px ;
+}
+
+h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--bg-secondary);
+    text-align: center
+}
+p{
+    font-size: 25px;
+    text-align: center;
+    color: #701c1a;
+}
+
+
+.footer{
+    padding: 20px 50px;
+
+    background-color: var(--bg-quinary);
+}
+
+div{
+    width: 100%;
+    height: 40vh;
+    /* background-image: url('../images/pngtree-man-with-chef-coat-working-in-kitchen-of-a-restaurant-close-picture-image_2662771.jpg'); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-image: fill 0 linear-gradient(#0001,#000);
+    display: flex;
+    align-items: end;
+    padding: 30px;
+}

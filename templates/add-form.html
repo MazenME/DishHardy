@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+{% endblock %}
+
+{% block title %}
+    Add Recipe
+{% endblock %}
+
+{% block content %}
+    <section class="Admin-section">
+        <div class="Admin-container">
+            <h2 class="Admin-h2">Add Recipes</h2>
+            <div class="Admin-actions">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="Admin-inputs">
+                        <label for="recipe-name">Recipe Name</label>
+                        <input type="text" id="recipe-name" name="recipe-name" placeholder="Recipe Name" required>
+                        <label for="course">Course</label>
+                        <select name="course" id="course">
+                            <option value="Appetizers">Appetizers</option>
+                            <option value="Main Course">Main Course</option>
+                            <option value="Dessert">Dessert</option>
+                        </select>
+                        <label for="recipe-image">Image URL</label>
+                        <input type="url" id="recipe-image" name="recipe-image" placeholder="Image URL" required>
+                        <label for="recipe-description">Description</label>
+                        <textarea id="recipe-description" name="recipe-description" placeholder="Describe Recipe" required></textarea>
+                        <div id="ingredient-section">
+                            <h3 class="Ingredients-h3">Ingredients</h3>
+                            <div class="ingredient-container">
+                                <input type="text" id="ingredient-name-1" name="ingredient-name[]" placeholder="Ingredient Name" required>
+                                <input type="number" id="ingredient-quantity-1" name="ingredient-quantity[]" placeholder="Quantity" required>
+                                <input type="text" id="ingredient-unit-1" name="ingredient-unit[]" placeholder="Unit" required>
+                                <button type="button" class="ingredient-delete" id="ingredient-delete" onclick="deleteIngredient(this)">Delete</button>
+                            </div>
+                        </div>
+                        <button type="button" onclick="addIngredient()">Add Ingredient</button>
+                        <div class="Admin-inputs-buttons">
+                            <button type="submit" id="Admin-submit">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/add.js' %}"></script>
+{% endblock %}

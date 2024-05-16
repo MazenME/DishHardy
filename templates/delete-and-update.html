@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+{% endblock %}
+
+{% block title %}
+    Manage recipes
+{% endblock %}
+
+
+{% block content %}
+    <h2 class="Admin-h2">Manage Recipes</h2>
+
+    <div class="Admin-recipes" id="Admin-recipes">
+
+        {% if recipes %}
+            {% for recipe in recipes %}
+                <div class="Admin-recipe-card">
+                    <img src="{{ recipe.image }}">
+                    <p>{{recipe.name}}</p>
+                    
+                    <form action="{% url 'update_form' recipe.id %}"  method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button id="Admin-card-edit" class="Admin-card-edit">Edit</button>
+                    </form>
+
+                    <form action="{% url 'delete_recipe' recipe.id %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button id="Admin-card-delete" data-id="{{ recipe.id }}" onclick="deleteRecipe(this)">Delete</button>
+                    </form>
+    
+                    
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <script src="{% static 'js/manage.js' %}"></script>
+{% endblock %}
+

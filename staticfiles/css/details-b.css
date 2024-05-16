@@ -1,0 +1,298 @@
+:root {
+  --bg-primary: #f7f7f7;
+  --bg-secondary: #734060;
+  --bg-tertiary: #f1d095;
+  --bg-quaternary: #979797;
+  --bg-quinary: #f4f4f4ea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  padding: 20px;
+  background-color: transparent;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+    font-size: 30px;
+    color: var(--bg-secondary) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .links {
+  position: relative;
+}
+
+header .links .icon:hover span:nth-child(2) {
+  width: 95%;
+}
+
+header .links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header .links .icon span {
+  background-color: var(--bg-quaternary);
+  margin-bottom: 5px;
+  height: 2px;
+}
+
+header .links .icon span:first-child {
+  width: 100%;
+}
+header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+}
+header .links .icon span:last-child {
+  width: 100%;
+}
+header .links:hover ul {
+  display: block;
+}
+
+header .links ul {
+  background-color: #f6f6f6;
+  padding-left: 0px;
+  min-width: 200px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+header .links ul::before {
+  content: "";
+  position: absolute;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  right: 1px;
+  top: -28px;
+}
+header .links ul li a {
+  display: block;
+  padding: 15px;
+  color: #333;
+  transition: 0.3s;
+}
+header .links ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+
+header .links ul li a:hover {
+  padding-left: 20px;
+}
+
+/* End Header */
+section.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  margin-top: 5px;
+  background-color: var(--bg-primary);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: var(--bg-secondary);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+input,textarea{
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+    /* box-shadow: 0px 10px 30px #efefef; */
+  margin-top: 5px;
+  border: none;
+  background-color: var(--bg-quinary);
+  color: var(--bg-quaternary);
+  margin-bottom: 10px;
+}
+form input:focus {
+  outline: 2px solid var(--bg-secondary) !important;
+}
+
+.radio input:focus {
+  outline: none !important;
+  border: none !important;
+}
+label {
+  font-size: 20px;
+  margin-right: 10px;
+  letter-spacing: 1.5px;
+}
+
+.radio {
+  width: 200px;
+  margin: 10px 0px;
+}
+
+.radio label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+.radio label input {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+h4 {
+  font-size: 25px;
+  margin-top: 10px;
+  color: var(--bg-quaternary);
+}
+h4 :hover {
+  color: #895275;
+}
+
+h4 a {
+  color: var(--bg-secondary);
+}
+
+button,#btnLogin {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-secondary);
+  color: rgba(255, 255, 255, 0.874);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #895275;
+  color: rgba(255, 255, 255, 0.874);
+}
+
+
+.mt-5{
+  margin-top: 45px;
+
+}
+
+.mt-3{
+  margin-top: 25px;
+
+}
+
+.text-danger {
+  color: red;
+  font-size: 18px;
+  margin: 0px 0px 10px 10px;
+    text-align: center;
+
+}
+
+.text-success {
+  color: green;
+  font-size: 20px;
+  margin: 0px 0px 10px 10px;
+
+  text-align: center;
+}
+
+.d-block{
+  display: block;
+}
+
+.is-valid{
+  border: 2px solid green;
+}
+
+.is-invalid{
+  border: 2px solid red;
+}
+
+.d-none{
+  display: none;
+}
+
+@media (max-width: 575.99px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  button {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+   button {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  button {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}

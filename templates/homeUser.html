@@ -1,0 +1,187 @@
+{% load static %}
+
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cs.css' %}">
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+{% endblock %}
+{% block title %}
+Dish Hardy
+{% endblock %}
+
+
+{% block content %}
+
+<header>
+    <div class="container">
+        <a href="{% url 'home' %}">
+            <div class="logo">
+                <h3>Dish Hardy</h3>
+                <img width="70" src="{%static 'images/logo.jpeg'%}" alt="">
+            </div>
+        </a>
+        <div class="links">
+            <span class="icon" data-aos="fade-down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <ul>
+                <li><a id="btnLogout" href="{% url 'logout' %}">logout</a></li>
+                <li><a href="{% url 'favourite_recipes' %}">Favorite</a></li>
+                <li><a href="{% url 'search' %}">Search</a></li>
+                <li><a href="{% url 'view_recipes' %}">All Recipes</a></li>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+
+<h2><i>Simply elegant</i></h2>
+
+
+<div class="kitchens">
+    <h3>Kitchens</h3>
+    <a href="#">
+        <div>
+            <img src="{% static 'images/Egyptian Koshari Recipe + Video.jpeg' %}" alt="can't open image">
+            <div>Egyptian Kitchen</div>
+        </div>
+        <p></p>
+    </a>
+    <a href="#">
+        <div>
+            <img src="{% static 'images/we.jpeg' %}" alt="can't open image">
+            <div>Western Kitchen</div>
+        </div>
+        <p></p>
+    </a>
+    <a href="#">
+        <div>
+            <img src="{% static 'images/es.jpeg' %}" alt="can't open image">
+            <div>Eastern Kitchen</div>
+        </div>
+        <p></p>
+    </a>
+    <a href="#">
+        <div>
+            <img src="{% static 'images/ita.jpeg' %}" alt="can't open image">
+            <div>Italian Kitchen</div>
+        </div>
+        <p></p>
+    </a>
+    <a href="#">
+        <div>
+            <img src="{% static 'images/fr.jpeg' %}" alt="can't open image">
+            <div>French Kitchen</div>
+        </div>
+        <p></p>
+    </a>
+    <p></p>
+</div>
+
+
+<div class="buttons">
+    <a href="{% url 'search' %}">Search</a>
+    <p>OR</p>
+    <a href="{% url 'view_recipes' %}">All Recipes</a>
+    <div></div>
+</div>
+
+
+<div id="Most_Popular_Recipes" class="Most_Popular_Recipes">
+    <h2>Most Popular Recipes</h2>
+
+    <div class="Koshari">
+        <img src="{% static 'images/Egyptian Koshari Recipe + Video.jpeg' %}" alt="can't open image">
+
+        <h3>Koshari</h3>
+        <p>
+            is a popular Egyptian dish enjoyed by people of all ages.
+            It is a hearty and flavorful vegetarian dish made with a combination of rice,
+            lentils, and macaroni. The dish is typically topped with a spicy tomato sauce and garnished with crispy
+            fried onions. Koshari is known for its satisfying and comforting taste, making it a staple in Egyptian
+            cuisine.
+            Its origins date back to the late 19th century when it was introduced as an affordable street food
+            option
+            for laborers. Today, koshari is widely loved and enjoyed across Egypt and beyond,
+            often served as a filling and nutritious meal for both lunch and dinner.
+        </p>
+        <span></span>
+    </div>
+    <div class="PiZZA">
+        <img src="{% static 'images/ita.jpeg' %}" alt="can't open image">
+        <h3>Pizza</h3>
+        <P>
+            is a beloved dish enjoyed worldwide. Originating from Italy,
+            it consists of a round flattened base of dough topped with various ingredients.
+            Common toppings include tomato sauce, cheese, meats, and vegetables. It is typically baked in an oven,
+            resulting in a delicious and satisfying meal. Pizza is versatile, with countless variations to suit
+            different tastes and dietary preferences. Whether enjoyed as a quick snack or a hearty meal,
+            pizza remains a timeless favorite among people of all ages.
+        </P>
+    </div>
+    <div class="croissant">
+        <img src="{% static 'images/fr.jpeg' %}" alt="can't open image">
+        <h3>croissant</h3>
+        <p>
+            is a delicious pastry that originated in France.
+            It is made from a laminated dough composed of butter and yeast-leavened dough.
+            Croissants have a crescent shape with a flaky and buttery texture.
+            They are typically enjoyed as a breakfast or snack item.
+            Croissants can be served plain or filled with chocolate, almond paste, or other ingredients.
+            They are popular worldwide and are often enjoyed with coffee or tea.
+        </p>
+    </div>
+    <div class="Kabsa">
+        <img src="{% static 'images/es.jpeg' %}" alt="can't open image">
+        <h3>Kabsa</h3>
+        <p>
+            is a traditional Arabian dish renowned for its rich flavors and aromatic spices.
+            It typically consists of fragrant rice cooked with tender meat, such as chicken, lamb, or goat.
+            The dish is often seasoned with a blend of spices like cinnamon, cardamom, cloves, and saffron,
+            giving it a distinctive and tantalizing taste. Kabsa is commonly served with a side of vegetables or
+            salad
+            and sometimes accompanied by a tangy yogurt sauce. Originating from Saudi Arabia, Kabsa has become
+            popular
+            across the Middle East and beyond, cherished for its comforting and hearty nature. It is a staple dish
+            in
+            festive gatherings, family celebrations, and special occasions, reflecting the region's rich culinary
+            heritage.
+        </p>
+    </div>
+    <div class="burger">
+        <img src="{% static 'images/we.jpeg' %}" alt="can't open image">
+
+        <h3>burger</h3>
+        <p>
+            short for hamburger, is a popular sandwich consisting of a cooked beef patty
+            placed between two slices of a bun. It is often accompanied by various toppings such as lettuce, tomato,
+            onions, cheese, and condiments like ketchup and mustard. Burgers are a versatile and customizable dish,
+            allowing for endless variations to suit different tastes and preferences. They are commonly served in
+            fast-food restaurants, diners, and even upscale establishments around the world. The burger's origins
+            can
+            be traced back to the United States, where it has become an iconic staple of American cuisine. With its
+            combination of savory flavors and handheld convenience, the burger remains a beloved comfort food
+            enjoyed
+            by people of all ages globally.
+        </p>
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="container">
+
+        <div class="bottom">
+            <p>copyright &copy; 2024 <b>Dish hardy</b>, all rights reserved</p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

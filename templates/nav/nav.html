@@ -1,0 +1,28 @@
+{% load static %}
+<header>
+    <div class="container">
+        <a href="{% url 'home' %}">
+            <div class="logo">
+                <h3>Dish Hardy</h3>
+                <img width="70" src="{%static 'images/logo.jpeg'%}" alt="">
+            </div>
+        </a>
+        <div class="links">
+            <span class="icon" data-aos="fade-down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <ul>
+                <li><a id="btnLogout" href="{% url 'logout' %}">logout</a></li>
+                <li><a href="{% url 'favourite_recipes' %}">Favorite</a></li>
+                <li><a href="{% url 'search' %}">Search</a></li>
+                <li><a href="{% url 'view_recipes' %}">All recipes</a></li>
+                <li><a  id="add" href="{% url 'add_form' %}">Add Recipe</a></li>
+                <li><a  id="manage" href="{% url 'show_manage' %}">manage Recipe</a></li>
+
+            </ul>
+        </div>
+    </div>
+</header>

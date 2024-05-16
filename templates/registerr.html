@@ -1,0 +1,62 @@
+{% load static %}
+
+
+<html>
+
+<head>
+    <title>Dish Hardy</title>
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+</head>
+
+<body>
+    <header>
+    <div class="container">
+        <a href="{% url 'home' %}">
+            <div class="logo">
+                <h3>Dish Hardy</h3>
+                <img width="70" src="{%static 'images/logo.jpeg'%}" alt="">
+            </div>
+        </a>
+        <div class="links">
+            <span class="icon" data-aos="fade-down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <ul>
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'register' %}">register</a></li>
+                
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+<body>
+    
+</body>
+
+<div class="container">
+  <h2>Registration</h2>
+
+  <form method="post">
+    {% csrf_token %} {{ form.non_field_errors }} {% for field in form %}
+    <div class="fieldWrapper">
+      <span class="errorText"> {{ field.errors }}</span>
+      {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+
+    <button type="submit">Register</button>
+    <h4>Already have an account? <a href="{% url 'login' %}">Login</a></h4>
+  </form>
+</div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,171 @@
+:root {
+    --bg-primary: #f7f7f7;
+    --bg-secondary: #734060;
+    --bg-tertiary: #f1d095;
+    --bg-quaternary: #979797;
+    --bg-quinary: #f4f4f4ea;
+    --bg-black: black;
+    --card-height: 300px;
+    --card-width: 300px;
+}
+
+* {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Admin-header {
+    padding: 20px;
+    background-color: transparent;
+
+}
+  
+.Admin-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+
+header .Admin-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message{
+    display: block;
+    text-align: center;
+    background-color: var(--bg-secondary);
+}
+
+.logo {
+    font-size: 30px;
+    color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Admin-h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: var(--bg-secondary);
+    text-align: center;
+}
+
+
+/* .Admin-message {
+    display: none;
+    color: red;
+    text-align: center;
+    background-color: rgb(255 0 0 /50%);
+} */
+
+button {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.874);
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.Admin-inputs {
+    margin: 1px;
+}
+
+.Admin-inputs label, p {
+    font-size: 20px;
+    margin-left: 10px;
+    letter-spacing: 1.5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--bg-quinary);
+    margin-bottom: 20px;
+}
+
+
+
+select {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--bg-quinary);
+    font-size: 20px;
+    color: #734060;
+    width: 30%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #895275;
+    color: rgba(255, 255, 255, 0.874);
+}
+
+textarea:focus, input[type="text"]:focus, select:focus {
+    outline: 2px solid var(--bg-secondary);
+    color: var(--bg-black);
+}
+
+.Admin-recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.Admin-recipe-card {
+    font-size: 20px;
+    text-align: center;
+    padding: 18px 0px;
+}
+
+.Admin-recipe-card img {
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: 5px;
+}
+
+.Admin-recipe-card button {
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    padding : 10px;
+}
+
+#Admin-card-edit {
+    margin-right: 5%;
+}
+
+#Admin-delete-all {
+    display: none;
+}
+
+.ingredient-container {
+    margin-bottom: 10px;
+    
+}
+
+.ingredient-delete {
+    margin-left: 10px;
+    margin-bottom: 40px;
+}

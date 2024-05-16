@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+{% endblock %}
+
+{% block title %}
+    update Recipe
+{% endblock %}
+
+{% block content %}
+    <section class="Admin-section">
+        <div class="Admin-container">
+            <h2 class="Admin-h2">update Recipes</h2>
+            <div class="Admin-actions">
+                <form method="POST" action="{% url 'edit_recipe' recipe.id %}">
+                    {% csrf_token %}
+                    <div class="Admin-inputs">
+                        <label for="recipe-name">Recipe Name</label>
+                        <input type="text" id="recipe-name" name="recipe-name" placeholder="Recipe Name" required value = "{{recipe.name}}">
+                        <label for="course">Course</label>
+                        <select name="course" id="course" value="{{recipe.course}}">
+                            <option value="Appetizers">Appetizers</option>
+                            <option value="Main Course">Main Course</option>
+                            <option value="Dessert">Dessert</option>
+                        </select>
+                        <label for="recipe-image">Image URL</label>
+                        <input type="url" id="recipe-image" name="recipe-image" placeholder="Image URL" required value = "{{recipe.image}}">
+                        <label for="recipe-description">Description</label>
+                        <textarea id="recipe-description" name="recipe-description" placeholder="Describe Recipe" required >{{recipe.instructions}}</textarea>
+
+
+                        <div id="ingredient-section">
+                            <label class="Ingredients-h3">Ingredients</label>
+                            {% for ingredient in ingredients%}
+                                <div class="ingredient-container">
+                                    <input type="text" id="ingredient-name-{{ingredient.id}}" name="ingredient-name[]" placeholder="Ingredient Name" required value = "{{ingredient.name}}">
+                                    <input type="number" id="ingredient-quantity-{{ingredient.id}}" name="ingredient-quantity[]" placeholder="Quantity" required value = "{{ingredient.quantity}}">
+                                    <input type="text" id="ingredient-unit-{{ingredient.id}}" name="ingredient-unit[]" placeholder="Unit" required value = "{{ingredient.unit}}">
+                                    <button type="button" class="ingredient-delete" id="ingredient-delete" onclick="deleteIngredient(this)">Delete</button>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <button type="button" onclick="addIngredient()">Add Ingredient</button>
+                        <div class="Admin-inputs-buttons">
+                            <button type="submit" id="Admin-submit">Update</button>
+                        </div>
+                        <span style="display: none" id='number_ingredients'>{{ingredients|length}}</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/update.js' %}"></script>
+{% endblock %}
